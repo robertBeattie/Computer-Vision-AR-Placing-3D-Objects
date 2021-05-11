@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class SwapButton : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] ARPlacement placement;
+    [SerializeField] TextMeshProUGUI text;
+    [SerializeField] GameObject beholder;
+    [SerializeField] GameObject mimic;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    bool isMimic = true;
+    public void Swap(){
+        if(isMimic){
+            text.SetText("Beholder");
+            placement.SetMonster(beholder);
+            isMimic = false;
+        }else{
+            text.SetText("Mimic");
+            placement.SetMonster(mimic);
+            isMimic = true;
+        }
     }
 }

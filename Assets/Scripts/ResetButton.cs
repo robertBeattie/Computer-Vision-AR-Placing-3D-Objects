@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class ResetButton : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    [SerializeField] ARPlacement placement;
+    public void ResetGame() {
         
+        placement.RestPlacement();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -7,20 +7,16 @@ public class ARPlacement : MonoBehaviour
 {
     [SerializeField] GameObject prefab;
     [SerializeField] GameObject placementIndicator;
+
+    [SerializeField] Joystick joystick;
     GameObject instantiatedPrefab;
     Pose PlacementPose;
     ARRaycastManager raycastManager;
     bool placementIsValid = false;
 
-    // Awake is called before Start
+    // Awake is called before Start, which is before the first frame
     void Awake() {
         raycastManager = FindObjectOfType<ARRaycastManager>();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
@@ -56,5 +52,18 @@ public class ARPlacement : MonoBehaviour
 
     void InstantiatePrefab(){
         instantiatedPrefab = Instantiate(prefab, PlacementPose.position, PlacementPose.rotation);
+        joystick.gameObject.SetActive(true);
+    }
+    
+    public void RestPlacement(){
+        //disalbe joystick
+        joystick.gameObject.SetActive(false);
+        //delete monster 
+        DestroyImmediate(instantiatedPrefab); 
+        //reactivate placing
+        
+    }
+    public void SetMonster(GameObject mon){
+        prefab = mon;
     }
 }
