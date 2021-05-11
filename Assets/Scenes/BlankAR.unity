@@ -221,7 +221,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0ce7ca15cd93341beb67396a494cef55, type: 2}
+  - {fileID: 2100000, guid: 7bc8f405ca233ad41b15a98a1a29682f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -660,5 +660,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d43a98d991a17b04588898334d1ebf6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4487241201891693739, guid: e116cfcab971e754fabf0882039327cf, type: 3}
+  prefab: {fileID: 6969870297268585763, guid: 6042d2b4343b56f4f9b5d3fc66587c3e, type: 3}
   placementIndicator: {fileID: 96756300}
