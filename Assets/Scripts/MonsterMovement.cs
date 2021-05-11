@@ -21,7 +21,7 @@ public class MonsterMovement : MonoBehaviour
             joystick = FindObjectOfType<Joystick>();
         }
         if(joystick != null){
-            Vector2 joystickMovement = new Vector2(joystick.Horizontal,joystick.Vertical);
+            Vector2 joystickMovement = new Vector2(joystick.Horizontal * -1,joystick.Vertical *-1);
             //monster.Move(new Vector3(joystickMovement.x,0,joystickMovement.y) * speed * Time.deltaTime);
             transform.Translate(new Vector3(joystickMovement.x,0,joystickMovement.y) * speed * Time.deltaTime);
         }
