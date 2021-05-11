@@ -52,6 +52,7 @@ public class ARPlacement : MonoBehaviour
 
     void InstantiatePrefab(){
         instantiatedPrefab = Instantiate(prefab, PlacementPose.position, PlacementPose.rotation);
+        instantiatedPrefab.transform.Rotate(new Vector3(0,180,0));
         joystick.gameObject.SetActive(true);
     }
     
@@ -61,7 +62,7 @@ public class ARPlacement : MonoBehaviour
         //delete monster 
         DestroyImmediate(instantiatedPrefab); 
         //reactivate placing
-        
+
     }
     public void SetMonster(GameObject mon){
         prefab = mon;
