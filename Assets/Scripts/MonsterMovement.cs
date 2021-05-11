@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MonsterMovement : MonoBehaviour
 {
-    [SerializeField] float speed = 7f;
+    float speed = 1f;
     [SerializeField] Joystick joystick;
     [SerializeField] CharacterController monster;
 
@@ -17,8 +17,14 @@ public class MonsterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 joystickMovement = new Vector2(joystick.Horizontal,joystick.Vertical);
-        //monster.Move(new Vector3(joystickMovement.x,0,joystickMovement.y) * speed * Time.deltaTime);
-        transform.Translate(new Vector3(joystickMovement.x,0,joystickMovement.y) * speed * Time.deltaTime);
+        if(joystick == null){
+            joystick = FindObjectOfType<Joystick>();
+        }
+        if(joystick != null){
+            Vector2 joystickMovement = new Vector2(joystick.Horizontal,joystick.Vertical);
+            //monster.Move(new Vector3(joystickMovement.x,0,joystickMovement.y) * speed * Time.deltaTime);
+            transform.Translate(new Vector3(joystickMovement.x,0,joystickMovement.y) * speed * Time.deltaTime);
+        }
+        
     }
 }
